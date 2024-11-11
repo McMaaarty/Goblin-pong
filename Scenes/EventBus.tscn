@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dvkj6a3jrctup"]
+
+[node name="EventBus" type="Node2D"]

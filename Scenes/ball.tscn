@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyu5w87alqui2"]
+
+[ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_f4sgx"]
+[ext_resource type="Script" path="res://Scripts/Trail2D.gd" id="2_1iygi"]
+
+[sub_resource type="Curve" id="Curve_iaqog"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_arlr6"]
+size = Vector2(10, 10)
+
+[node name="Ball" type="CharacterBody2D" groups=["Ball"]]
+position = Vector2(576, 324)
+collision_mask = 3
+script = ExtResource("1_f4sgx")
+
+[node name="Trail2D" type="Line2D" parent="."]
+show_behind_parent = true
+points = PackedVector2Array(-145, 345)
+width_curve = SubResource("Curve_iaqog")
+script = ExtResource("2_1iygi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_arlr6")

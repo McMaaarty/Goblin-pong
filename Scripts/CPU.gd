@@ -14,7 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#move paddle towards ball
-	ball_pos = $"../Ball".position
+	var nearestBall = GameManager.get_nearest_node_in_group("Ball", position)
+	ball_pos = nearestBall.position
 	dist = position.y - ball_pos.y
 	
 	if abs(dist) > get_parent().PADDLE_SPEED * delta:
