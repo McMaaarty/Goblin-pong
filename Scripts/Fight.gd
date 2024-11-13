@@ -36,7 +36,7 @@ func update_score(body):
 		else :
 			body.destroy()
 	
-	if get_tree().get_nodes_in_group("Ball").size() == 1 :
+	if get_tree().get_nodes_in_group("Ball") != null && get_tree().get_nodes_in_group("Ball").size() == 1 :
 		$BallTimer.start()
 
 func _on_bonus_timer_timeout():

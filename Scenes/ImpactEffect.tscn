@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx2pxty2am54b"]
+
+[sub_resource type="Curve" id="Curve_lxnne"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Node2D" type="Node2D"]
+z_index = 5
+rotation = -6.28319
+
+[node name="Effect" type="CPUParticles2D" parent="."]
+z_index = 5
+texture_filter = 1
+emitting = false
+amount = 15
+lifetime = 0.25
+one_shot = true
+explosiveness = 0.8
+spread = 90.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.5
+initial_velocity_max = 308.06
+angular_velocity_max = 720.0
+angle_min = -190.2
+angle_max = 176.6
+scale_amount_max = 15.0
+scale_amount_curve = SubResource("Curve_lxnne")

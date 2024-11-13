@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyu5w87alqui2"]
+[gd_scene load_steps=6 format=3 uid="uid://cyu5w87alqui2"]
 
 [ext_resource type="Script" path="res://Scripts/Ball.gd" id="1_f4sgx"]
 [ext_resource type="Script" path="res://Scripts/Trail2D.gd" id="2_1iygi"]
+[ext_resource type="PackedScene" uid="uid://cx2pxty2am54b" path="res://Scenes/ImpactEffect.tscn" id="2_v16wy"]
 
 [sub_resource type="Curve" id="Curve_iaqog"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -14,12 +15,14 @@ size = Vector2(10, 10)
 position = Vector2(576, 324)
 collision_mask = 3
 script = ExtResource("1_f4sgx")
+impact_effect_scene = ExtResource("2_v16wy")
 
 [node name="Trail2D" type="Line2D" parent="."]
 show_behind_parent = true
 points = PackedVector2Array(-145, 345)
 width_curve = SubResource("Curve_iaqog")
 script = ExtResource("2_1iygi")
+length = 10
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8
